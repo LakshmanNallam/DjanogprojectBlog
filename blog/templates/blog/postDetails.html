@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% load static%}
+
+{% block title %}
+    post Details
+{%endblock%}
+{% block cssFile%}<link rel="stylesheet" href="{% static "blog/home.css"%}"+"?{% now "U" %}"><link rel="stylesheet" href="{% static "blog/postDetails.css"%}"+"?{% now "U" %}">{%endblock%}
+
+{%block body%}
+  <div class="lowerCon min">
+    <div class="poster"><h1>{{obj.title}}</h1><div class="postUpdatedCon">
+        <div class="posterholder"><img src="{% static "blog/images/"|add:obj.image%}" class="imgposter"/></div>
+        <p>By Lakshman</p>
+        <p>Post Updated:{{obj.date|date:"D d M Y"}}</p>
+    </div></div>
+    <div class="blogdesc">
+        <p>{{obj.excerpt}} </p>
+        <p>{{obj.content}} </p>
+        <p>{% lorem 1 b random %} </p>
+    </div>
+  </div>
+{%endblock%}

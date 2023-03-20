@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+{% load static%}
+
+{% block title %}
+    home
+{%endblock%}
+{% block cssFile%}<link rel="stylesheet" href="{% static "blog/home.css"%}"+"?{% now "U" %}" />{%endblock%}
+
+{%block body%}
+    <div class="aboutCon"><div class="aboutCon2">
+        <div class="imgCon"><img src={% static "blog/images/myProfile.jpg"%} class="img"></div>
+        <div class="RightCOn"><h1>Lakshman's</h1><h1> Blog</h1><p>Hi iam Lakshman. I love to blog and code</p></div>
+    </div></div>
+    <ul class="lowerCon">
+        {%for post in posts%}
+           {% include "blog/post/post.html" %}
+        {%endfor%}
+        
+        
+    </ul>
+{%endblock%}

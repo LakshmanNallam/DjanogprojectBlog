@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% load static%}
+
+{% block title %}
+    home
+{%endblock%}
+{% block cssFile%}<link rel="stylesheet" href="{% static "blog/home.css"%}"+"?{% now "U" %}"><link rel="stylesheet" href="{% static "blog/posts.css"%}"+"?{% now "U" %}">{%endblock%}
+
+{%block body%}
+    
+    <div class="LowerConinposts"><h1>My Collected Posts</h1>
+      <div class="AllPostsCon">
+        {%for post in posts%}
+        {% include "blog/post/post.html"%}
+        {%endfor%}
+      </div> 
+{%endblock%}

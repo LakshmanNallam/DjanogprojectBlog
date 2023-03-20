@@ -1,0 +1,16 @@
+.LowerConinposts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    background-color: #EA738DFF; 
+    min-height: 92vh;
+    color: black;
+}.AllPostsCon{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}.bgColorInallaposts{
+    background-color: #89ABE3FF;
+}

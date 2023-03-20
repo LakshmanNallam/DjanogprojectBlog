@@ -1,0 +1,7 @@
+{%load static%}
+
+<a class="cardCon bgColorInallaposts" href="{% url "detailspage" post.slug %}">
+    <h1>My Latest Thoughts</h1>
+    <div class="thoughtsImgCon"><img src="{%static "blog/images/"|add:post.image%}" class="thoughtsImg"></div>
+    <p>{{post.title}}</p>
+</a>
