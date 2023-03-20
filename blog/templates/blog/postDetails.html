@@ -8,10 +8,15 @@
 
 {%block body%}
   <div class="lowerCon min">
-    <div class="poster"><h1>{{obj.title}}</h1><div class="postUpdatedCon">
+    <div class="poster"><h1>{{obj.title}}</h1>
+      {%for tagName in allTagsList%}
+        <h2>{{tagName}}</h2>
+      {% endfor %}
+      <h2></h2>
+      <div class="postUpdatedCon">
         <div class="posterholder"><img src="{% static "blog/images/"|add:obj.image%}" class="imgposter"/></div>
-        <p>By Lakshman</p>
-        <p>Post Updated:{{obj.date|date:"D d M Y"}}</p>
+        <p>By <a href="mailto:{{obj.author.email}}">{{obj.author}}</a></p>
+        <p>Post Updated:{{obj.data|date:"D d M Y"}}</p>
     </div></div>
     <div class="blogdesc">
         <p>{{obj.excerpt}} </p>
